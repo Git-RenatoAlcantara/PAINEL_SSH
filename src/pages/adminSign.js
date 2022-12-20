@@ -42,13 +42,20 @@ export default function AdminPage() {
     }
   }, [token]);
 
+  useEffect(() => {
+    const jwt = localStorage.getItem("PAINEL_ADMIN");
+    if(jwt){
+      const convertObject = JSON.parse(jwt)
+      console.log(convertObject)
+    }
+  }, [])
+  
   function submitForm() {
     const storage = { token: "1234" };
 
     return new Promise((resolve, result) => {
       setTimeout(() => {
         setToken(storage);
-        setAuth(true);
         resolve("");
       }, 1500);
     });
@@ -59,7 +66,7 @@ export default function AdminPage() {
         <Navigate to="dashboard" />
       ) : (
         <BoxBackground>
-          <Title>PAINEL </Title>
+          <Title>PAINEL ADMIN</Title>
           <Paper
             className="animate__animated animate__bounce animate__slow"
             elevation="0"
