@@ -38,7 +38,7 @@ export default function AdminPage() {
   }
   useEffect(() => {
     if (authToken) {
-      localStorage.setItem("PAINEL_ADMIN", JSON.stringify({token: authToken}));
+      localStorage.setItem("PAINEL_ADMIN", JSON.stringify({authToken}));
     }
   }, [authToken]);
 
