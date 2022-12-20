@@ -59,6 +59,9 @@ export default function BotaoAccordion() {
           expandIcon={ExpandIcon()}
           aria-controls="panel2a-content"
           id="panel2a-header"
+          sx={{
+            background: "#252631",
+          }}
         >
           <Typography>Accordion 2</Typography>
         </AccordionSummary>
