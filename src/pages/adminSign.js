@@ -59,7 +59,7 @@ export default function AdminPage() {
         <Navigate to="dashboard" />
       ) : (
         <BoxBackground>
-          <Title>PAINEL ADMIN </Title>
+          <Title>PAINEL </Title>
           <Paper
             className="animate__animated animate__bounce animate__slow"
             elevation="0"
