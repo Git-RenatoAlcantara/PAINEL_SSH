@@ -17,7 +17,7 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("typing");
-  const [token, setToken] = useState(null);
+  const [authToken, setAuthToken] = useState(null);
   const [auth, setAuth] = useState(false);
 
   async function handlerSubmit(e) {
@@ -37,25 +37,26 @@ export default function AdminPage() {
     setPassword(e.target.value);
   }
   useEffect(() => {
-    if (token) {
-      localStorage.setItem("PAINEL_ADMIN", JSON.stringify(token));
+    if (authToken) {
+      localStorage.setItem("PAINEL_ADMIN", JSON.stringify(authToken));
     }
-  }, [token]);
+  }, [authToken]);
 
   useEffect(() => {
     const jwt = localStorage.getItem("PAINEL_ADMIN");
     if(jwt){
       const convertObject = JSON.parse(jwt)
-      console.log(convertObject)
+      const { token } = convertObject
+      setAuthToken(token)
     }
   }, [])
-  
+
   function submitForm() {
     const storage = { token: "1234" };
 
     return new Promise((resolve, result) => {
       setTimeout(() => {
-        setToken(storage);
+        setAuthToken(storage);
         resolve("");
       }, 1500);
     });
