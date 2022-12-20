@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  display: "border-box";
+}
+body {
+  background: "#F3F0F5";
+  overflow: hidden;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: "#F3F0F5";
+}
