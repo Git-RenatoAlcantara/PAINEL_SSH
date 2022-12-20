@@ -47,7 +47,7 @@ export default function AdminPage() {
     if(jwt){
       const convertObject = JSON.parse(jwt)
       const { token } = convertObject
-      setAuthToken(token)
+      setAuth(token)
     }
   }, [])
 
