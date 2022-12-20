@@ -5,7 +5,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Button
+  Button,
 } from "@mui/material";
 
 const ButtonCustom = () => {
@@ -27,49 +27,23 @@ export default function BotaoAccordion() {
           color: "#fff",
           borderRadius: ".5rem",
           background: "#252631",
-          "&:hover": {
-            background: "rgba(250, 251, 255, 0.2)"
-          }
         }}
       >
         <AccordionSummary
           expandIcon={ExpandIcon()}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          sx={{
+            borderRadius: ".5rem",
+            "&:hover": {
+              background: "rgba(250, 251, 255, 0.2)",
+            },
+          }}
         >
           <Typography>Revendedor</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <ButtonCustom />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion
-        mt="2"
-        elevation="0"
-        sx={{
-          color: "#fff",
-          borderRadius: ".5rem",
-          background: "#252631",
-          "&:hover": {
-            background: "rgba(250, 251, 255, 0.2)"
-          }
-        }}
-      >
-        <AccordionSummary
-          expandIcon={ExpandIcon()}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-          sx={{
-            background: "#252631",
-          }}
-        >
-          <Typography>Accordion 2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
         </AccordionDetails>
       </Accordion>
     </div>
